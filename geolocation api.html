@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+  <!-- taking seperate x,y  -->
+     <!-- coords-cordinate -->
+     <!-- `//backtick -->
+<body>
+
+    <div id="pos"></div>
+</body>
+<script>
+     if (navigator.geolocation) {
+        // alert("brwser support geolocation api")
+        navigator.geolocation.getCurrentPosition(callback);
+     }
+     function callback(position){
+        console.log(position)
+          //sting template
+        document.getElementById("pos").innerHTML=`
+              <h1>Latitude is ${position.coords.latitude}</h1>
+             <h1>Longitude is ${position.coords.longitude}</h1>
+    `
+    // document.getElementById("pos").innerHTML="<h1>Latitude is"+position.coords.latitude+"<h1>"
+    //     "<h1>Longitude is"+position.coords.longitude+"<h1>"
+
+
+     }
+</script>
+</html>

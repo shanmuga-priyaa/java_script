@@ -1,0 +1,41 @@
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="todo"></div>
+    <script>
+        function funone(){
+            console.log("function one");
+        }
+
+        async function funtwo(){
+            await fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+            .then((json) =>{
+                console.log(json);
+                document.getElementById("todo").innerHTML = `
+                    Todo Id: ${json.id}<br />
+                    Title: ${json.title}<br />
+                    User Id: ${json.userId}<br />
+                `;
+            });
+        }
+        function funthree(){
+            console.log("function three");
+        }
+
+        async function main(){
+            funone();
+            await funtwo();
+            funthree();
+        }
+
+        main();
+    </script>
+</body>
+</html>

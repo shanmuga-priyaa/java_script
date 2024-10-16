@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun1(){
+            //local scope
+            let a=12;
+            var b=20;
+            if(b == 12){
+                let c=10;
+                var d=11;
+            }
+            console.log("C=",c,"D=",d); //d will define 
+        }
+        fun1();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

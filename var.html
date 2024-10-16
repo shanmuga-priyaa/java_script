@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js</title>
+    <script>
+           var b=15;//function outside (global scope)it will define
+        function func_name(){
+            console.log("hii");
+            var b=15;//function inside (local scope)it will not define
+        }
+        console.log("B=",b);
+        func_name();
+        </script>
+</head>
+<body> 
+</body>
+</html>

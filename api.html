@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- application prgm interface -->
+ <!-- validating the some range (in form api it is easy to combain the program) -->
+<body>
+    <input id="id1" type="number" min="100" max="300" required>
+    <button onclick="myFunction()">ok</button><br><br>
+    <!-- <button onclick="window.history.black()">black</button>
+        <button onclick="window.history().Forward()">Forward</button>
+        <button onclick="window.history.go(-3)">GO</button> -->
+</body>
+<script>
+    function myFunction(){
+    //     let textval=document.getElementById("id1").value
+    //     let val =Number.parseInt(textval)
+    //     //alert (val+val)
+    //     if(val>=100 &&  val<=300){
+    //         alert("input is correct")
+    //     }else{
+    //         alert("input is incorrect")
+    //     }
+        
+        const inpObj = document.getElementById("id1");
+        console.log(inpObj.Validity)
+        console.log(inpObj.willValidate)
+        if (!inpObj.checkValidity()) { //form api
+            alert("Input ok")
+        }else{
+            alert(inpObj.validationMessage)        }          
+    }
+      
+</script>
+</html>

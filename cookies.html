@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="click" onclick="run()">
+    <h1 id="demo"></h1>
+</body>
+<script>
+    document.cookie = "username=priyaa"//universal time zone
+    document.cookie ="id=16"
+    function run(){
+        document.getElementById("demo").innerHTML="hii welcome" +getcookie("id")
+        // let decodedCookie = decodeURIComponent(document.cookie);
+        // let ca = decodedCookie.split(';');
+        // console.log(ca) //cookie array
+
+       
+        let ca=document.cookie.split(";")
+        console.log(ca)//we can write in single line
+        let find="username"//store in one value
+        for(let i=0;i<ca.length;i++){
+        let s= ca[i]
+        if(s.indexOf(find) != -1){
+       let start=s.indexOf(find)+(find+"=").length
+        console.log(s.substring(start))
+    }
+    }
+}
+function getcookie(cookieName){
+let ca=document.cookie.split(";")
+        for(let i=0;i<ca.length;i++){
+        let s= ca[i]
+        if(s.indexOf(cookieName) != -1){
+       let start=s.indexOf(cookieName)+(cookieName+"=").length
+        // console.log(s.substring(start))
+        return s.substring(start)
+    }
+    }
+}
+
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let mypromise = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                // resolve("hii")
+                reject("error")
+            }, 3000)
+        })
+        function main(){
+            mypromise.then((value)=>{
+                console.log("the received value is:",value)
+            })
+            .catch((err)=>{
+                console.log("the received errors:",err)
+            })
+        }
+        main()
+    </script>
+</body>
+</html>
